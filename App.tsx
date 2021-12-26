@@ -20,10 +20,10 @@ import {
   Platform,
   PlatformColor,
   Button,
-  ActivityIndicator,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import QRScanner from './components/QRScanner';
 
 const Section: React.FC<{
   title: string;
@@ -68,9 +68,9 @@ const App = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <View style={styles().center}>
-          <ActivityIndicator />
           <Text style={styles(isDarkMode).label}>Antal gange: {count}</Text>
           <Button onPress={() => setCount(count + 1)} title="Klik mig!" />
+          <QRScanner />
         </View>
       </ScrollView>
     </SafeAreaView>
